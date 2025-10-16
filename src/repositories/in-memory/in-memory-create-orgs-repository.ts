@@ -20,4 +20,13 @@ export class InMemoryCreateOrgsRepository implements OrgRepository {
 
         return org
     }
+
+    async findByEmail(email: string): Promise<Org | null> {
+        const org = this.items.find((item) => item.email == email);
+        if (!org) {
+            throw new Error("Organização não encontrada");
+        }
+        return org;
+    }
+
 }
