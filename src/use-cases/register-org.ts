@@ -1,4 +1,4 @@
-import { OrgRepository } from "@/repositories/orgs-repository";
+import { PrismaOrgRepository } from "@/repositories/prisma/prisma-orgs-repository";
 import { Org } from "client/prisma"
 
 interface CreateOrgUseCaseRequest {
@@ -15,7 +15,7 @@ interface CreateOrgUseCaseResponse {
 
 export class RegisterOrg {
 
-    constructor(private orgRepository: OrgRepository) { }
+    constructor(private orgRepository: PrismaOrgRepository) { }
 
     async execute({
         responsavel,

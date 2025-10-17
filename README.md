@@ -35,7 +35,7 @@ Funções abaixo implementadas com o marcador [x]
 
 - [x] Rota para cadastrar uma ORG, garantindo que inclua endereço e número de Whatsapp
 - [x] Rota de login para uma ORG
-- [ ] Rota para cadastrar um pet, garantindo que ele seja associado a uma ORG
+- [x] Rota para cadastrar um pet, garantindo que ele seja associado a uma ORG
 - [ ] Rotas para listar pets, exigindo a cidade como parâmetro obrigatório
 - [ ] Implementar a funcionalidade de filtros opcionais por caracteristicas dos pets na listagem
 - [ ] Rota para visualizar os detalhes de um pet especifico
