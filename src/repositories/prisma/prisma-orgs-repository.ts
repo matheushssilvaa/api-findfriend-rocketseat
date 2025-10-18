@@ -22,4 +22,20 @@ export class PrismaOrgRepository implements OrgRepository {
         return org
     }
 
+    async findByCity(city: string): Promise<Org[] | null> {
+        const petOfCity = await prisma.org.findMany({
+            where: {
+                endereco: {
+                    contains: city,
+                    mode: 'insensitive'
+                },
+            },
+            include: {
+                Pet: true
+            }
+        })
+
+        return petOfCity
+    }
+
 }

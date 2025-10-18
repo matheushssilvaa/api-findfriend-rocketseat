@@ -10,7 +10,7 @@ export class InMemoryCreatePetsRepository implements PetRepository {
         const pet = {
             id: data.id ?? randomUUID(),
             nome: "PET 01",
-            decricao: null,
+            descricao: null,
             idade: "adulto",
             porte: "pequeno",
             nivel_energia: "alto",
@@ -28,5 +28,13 @@ export class InMemoryCreatePetsRepository implements PetRepository {
         this.items.push(pet)
 
         return pet
+    }
+
+    findById(id: string): Promise<Pet | null> {
+        throw new Error("Method not implemented")
+    }
+
+    findByManyId(id: string): Promise<Pet[] | null> {
+        throw new Error("Method not implemented")
     }
 }

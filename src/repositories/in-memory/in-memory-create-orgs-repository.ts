@@ -29,4 +29,9 @@ export class InMemoryCreateOrgsRepository implements OrgRepository {
         return org;
     }
 
+    async findByCity(city: string): Promise<Org[] | null> {
+        const orgs = this.items.filter((org) => org.endereco.includes(city));
+        return orgs.length > 0 ? orgs : null;
+    }
+
 }

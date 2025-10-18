@@ -38,6 +38,5 @@ export async function authenticate(request: FastifyRequest, reply: FastifyReply)
             })
     } catch (err: any) {
         return reply.status(400).send({ message: err.message })
-        throw err
     }
 }

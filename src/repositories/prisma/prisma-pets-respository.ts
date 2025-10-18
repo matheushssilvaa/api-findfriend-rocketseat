@@ -10,4 +10,24 @@ export class PrismaPetRepository implements PetRepository {
 
         return pet
     }
+
+    async findByManyId(id: string): Promise<Pet[]> {
+        const petFilterByOrg = await prisma.pet.findMany({
+            where: {
+                orgId: id
+            }
+        })
+
+        return petFilterByOrg
+    }
+
+    async findById(id: string): Promise<Pet | null> {
+        const searchPetById = await prisma.pet.findUnique({
+            where: {
+                id: id
+            }
+        })
+
+        return searchPetById
+    }
 }

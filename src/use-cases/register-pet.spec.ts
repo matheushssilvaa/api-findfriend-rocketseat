@@ -15,7 +15,7 @@ describe("Cadastro de pets", () => {
     it("deve ser possivel cadastrar um pet associado a uma org", async () => {
         const { pet } = await sut.execute({
             nome: "novo pet",
-            decricao: "descrição do pet (opcional)",
+            descricao: "descrição do pet (opcional)",
             idade: "idade",
             porte: "porte",
             nivel_energia: "nivel_energia",
