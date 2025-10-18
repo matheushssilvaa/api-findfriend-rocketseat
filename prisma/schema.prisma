@@ -11,7 +11,7 @@ datasource db {
 model Pet {
     id                  String   @id @default(uuid())
     nome                String
-    decricao            String?
+    descricao           String?
     idade               String
     porte               String
     nivel_energia       String

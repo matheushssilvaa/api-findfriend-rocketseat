@@ -1,6 +1,4 @@
-import { InMemoryCreateOrgsRepository } from "@/repositories/in-memory/in-memory-create-orgs-repository";
 import { PrismaOrgRepository } from "@/repositories/prisma/prisma-orgs-repository";
-import fastifyJwt from "@fastify/jwt";
 import { compare } from "bcryptjs";
 import { Org } from "client/prisma";
 

@@ -3,7 +3,7 @@ import { Pet } from "client/prisma";
 
 interface CreatePetUseCaseRequest {
     nome: string;
-    decricao?: string | null;
+    descricao?: string | null;
     idade: string;
     porte: string;
     nivel_energia: string;
@@ -23,7 +23,7 @@ export class RegisterPet {
 
     async execute({
         nome,
-        decricao,
+        descricao,
         idade,
         porte,
         nivel_energia,
@@ -35,7 +35,7 @@ export class RegisterPet {
     }: CreatePetUseCaseRequest): Promise<CreatePetUseCaseResponse> {
         const pet = await this.petRepository.create({
             nome,
-            decricao,
+            descricao,
             idade,
             porte,
             nivel_energia,
