@@ -1,5 +1,5 @@
 import { Prisma, Pet } from "client/prisma";
-import { PetRepository } from "../pets-repository";
+import { PetFilterOptions, PetRepository } from "../pets-repository";
 import { prisma } from "@/lib/prisma";
 
 export class PrismaPetRepository implements PetRepository {
@@ -11,16 +11,6 @@ export class PrismaPetRepository implements PetRepository {
         return pet
     }
 
-    async findByManyId(id: string): Promise<Pet[]> {
-        const petFilterByOrg = await prisma.pet.findMany({
-            where: {
-                orgId: id
-            }
-        })
-
-        return petFilterByOrg
-    }
-
     async findById(id: string): Promise<Pet | null> {
         const searchPetById = await prisma.pet.findUnique({
             where: {
@@ -29,5 +19,18 @@ export class PrismaPetRepository implements PetRepository {
         })
 
         return searchPetById
+    }
+
+    async filterPets(data: PetFilterOptions): Promise<Pet[]> {
+        const pets = await prisma.pet.findMany({
+            where: {
+                idade: data.idade ?? undefined,
+                nivel_energia: data.nivel_energia ?? undefined,
+                porte: data.porte ?? undefined,
+                nivel_independencia: data.nivel_independencia ?? undefined
+            }
+        })
+
+        return pets
     }
 }

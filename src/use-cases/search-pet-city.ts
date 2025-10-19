@@ -11,7 +11,7 @@ interface SearchPetsUseCaseResponse {
 }
 
 export class SearchPetsUseCase {
-  constructor(private orgsRepository: InMemoryCreateOrgsRepository) {}
+  constructor(private orgsRepository: PrismaOrgRepository) {}
 
   async execute({
     param

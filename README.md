@@ -37,7 +37,7 @@ Funções abaixo implementadas com o marcador [x]
 - [x] Rota de login para uma ORG
 - [x] Rota para cadastrar um pet, garantindo que ele seja associado a uma ORG
 - [x] Rotas para listar pets, exigindo a cidade como parâmetro obrigatório
-- [ ] Implementar a funcionalidade de filtros opcionais por caracteristicas dos pets na listagem
+- [x] Implementar a funcionalidade de filtros opcionais por caracteristicas dos pets na listagem
 - [ ] Rota para visualizar os detalhes de um pet especifico
 - [ ] Garantir que o acesso de adm da ORG seja restrito a usuários logados
 - [ ] Aplicar os principios de SOLID durante o desenvolvimento da estrutura da API
