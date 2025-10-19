@@ -1,4 +1,3 @@
-import { InMemoryCreatePetsRepository } from "@/repositories/in-memory/in-memory-create-pets-repository";
 import { PrismaPetRepository } from "@/repositories/prisma/prisma-pets-respository";
 import { Pet } from "client/prisma";
 
@@ -16,7 +15,7 @@ interface PetFilterResponse {
 
 export class PetFilter {
 
-    constructor(private petRepository: InMemoryCreatePetsRepository) { }
+    constructor(private petRepository: PrismaPetRepository) { }
 
     async execute({
         idade,

@@ -31,8 +31,9 @@ export class InMemoryCreatePetsRepository implements PetRepository {
     }
 
 
-    findById(id: string): Promise<Pet | null> {
-        throw new Error("Method not implemented")
+    async findById(id: string): Promise<Pet | null> {
+        const pet = this.items.find((pet) => pet.id == id)
+        return pet || null
     }
 
     async filterPets(options: PetFilterOptions): Promise<Pet[]> {
