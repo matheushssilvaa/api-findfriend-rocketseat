@@ -12,8 +12,8 @@ interface AuthenticateOrgResponse {
 }
 
 export class Authenticate {
- 
-    constructor(private repository: PrismaOrgRepository){}
+
+    constructor(private repository: PrismaOrgRepository) { }
 
     async execute({
         email,
@@ -21,17 +21,17 @@ export class Authenticate {
     }: AuthenticateOrgRequest): Promise<AuthenticateOrgResponse> {
         const org = await this.repository.findByEmail(email)
 
-        if(!org) {
+        if (!org) {
             throw new Error("ORG não encontrada")
         }
 
         const doesPasswordMatches = await compare(senha, org.senha)
 
-        if(!doesPasswordMatches) {
+        if (!doesPasswordMatches) {
             throw new Error("Credenciais inválidas")
         }
 
         return { org }
     }
-    
+
 }

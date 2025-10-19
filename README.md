@@ -39,6 +39,6 @@ Funções abaixo implementadas com o marcador [x]
 - [x] Rotas para listar pets, exigindo a cidade como parâmetro obrigatório
 - [x] Implementar a funcionalidade de filtros opcionais por caracteristicas dos pets na listagem
 - [x] Rota para visualizar os detalhes de um pet especifico
-- [ ] Garantir que o acesso de adm da ORG seja restrito a usuários logados
-- [ ] Aplicar os principios de SOLID durante o desenvolvimento da estrutura da API
-- [ ] Criar testes para validar as funcionalidades e regras de negócio
+- [X] Garantir que o acesso de adm da ORG seja restrito a usuários logados
+- [X] Aplicar os principios de SOLID durante o desenvolvimento da estrutura da API
+- [X] Criar testes para validar as funcionalidades e regras de negócio
