@@ -1,5 +1,6 @@
 import { PrismaPetRepository } from '@/repositories/prisma/prisma-pets-respository'
 import { Pet } from 'client/prisma'
+import { ErrorNotFoundPet } from './errors/Error-not-found-pet'
 
 interface GetPetsByIdUseCaseRequest {
     id: string
@@ -18,7 +19,7 @@ export class GetPetByIdUseCase {
         const pet = await this.orgsRepository.findById(id)
 
         if (!pet) {
-            throw new Error("Nenhum pet encontrado")
+            throw new ErrorNotFoundPet()
         }
 
         return {

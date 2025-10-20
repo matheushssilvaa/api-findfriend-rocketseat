@@ -1,5 +1,6 @@
 import { PrismaPetRepository } from "@/repositories/prisma/prisma-pets-respository";
 import { Pet } from "client/prisma";
+import { ErrorNotFoundPet } from "./errors/Error-not-found-pet";
 
 interface PetFilterRequest {
     idade: string | null | undefined,
@@ -32,7 +33,7 @@ export class PetFilter {
         })
 
         if (pets.length == 0) {
-            throw new Error("Nenhum pet encontrado com essas pesquisas")
+            throw new ErrorNotFoundPet()
         }
 
         const results = pets.length

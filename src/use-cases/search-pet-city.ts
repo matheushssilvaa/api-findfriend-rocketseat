@@ -1,6 +1,6 @@
-import { InMemoryCreateOrgsRepository } from '@/repositories/in-memory/in-memory-create-orgs-repository'
 import { PrismaOrgRepository } from '@/repositories/prisma/prisma-orgs-repository'
 import { Org } from 'client/prisma'
+import { ErrorNotFoundPet } from './errors/Error-not-found-pet'
 
 interface SearchPetsUseCaseRequest {
   param: string
@@ -11,15 +11,15 @@ interface SearchPetsUseCaseResponse {
 }
 
 export class SearchPetsUseCase {
-  constructor(private orgsRepository: PrismaOrgRepository) {}
+  constructor(private orgsRepository: PrismaOrgRepository) { }
 
   async execute({
     param
   }: SearchPetsUseCaseRequest): Promise<SearchPetsUseCaseResponse> {
     const pets = await this.orgsRepository.findByCity(param)
 
-    if(!pets) {
-      throw new Error("Nenhum pet encontrado para essa localidade")
+    if (!pets) {
+      throw new ErrorNotFoundPet()
     }
 
     return {

@@ -1,6 +1,7 @@
 import { PrismaOrgRepository } from "@/repositories/prisma/prisma-orgs-repository";
 import { compare } from "bcryptjs";
 import { Org } from "client/prisma";
+import { ErrorNotFoundOrg } from "./errors/Error-not-found-org";
 
 interface AuthenticateOrgRequest {
     email: string,
@@ -22,7 +23,7 @@ export class Authenticate {
         const org = await this.repository.findByEmail(email)
 
         if (!org) {
-            throw new Error("ORG não encontrada")
+            throw new ErrorNotFoundOrg()
         }
 
         const doesPasswordMatches = await compare(senha, org.senha)
