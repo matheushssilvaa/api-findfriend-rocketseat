@@ -1,5 +1,5 @@
-import { PrismaPetRepository } from "@/repositories/prisma/prisma-pets-respository";
-import { RegisterPet } from "@/use-cases/register-pet";
+import { PrismaPetRepository } from "../../../repositories/prisma/prisma-pets-respository";
+import { RegisterPet } from "../../../use-cases/register-pet";
 import { FastifyRequest, FastifyReply } from "fastify";
 import { z } from "zod";
 

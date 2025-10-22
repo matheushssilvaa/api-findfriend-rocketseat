@@ -1,6 +1,6 @@
 import { Prisma, Pet } from "client/prisma";
 import { PetFilterOptions, PetRepository } from "../pets-repository";
-import { prisma } from "@/lib/prisma";
+import { prisma } from "../../lib/prisma";
 
 export class PrismaPetRepository implements PetRepository {
     async create(data: Prisma.PetCreateInput): Promise<Pet> {

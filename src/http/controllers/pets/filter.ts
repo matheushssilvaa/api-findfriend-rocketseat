@@ -1,7 +1,7 @@
-import { PrismaPetRepository } from "@/repositories/prisma/prisma-pets-respository";
-import { PetFilter } from "@/use-cases/pet-filter";
+import { PrismaPetRepository } from "../../../repositories/prisma/prisma-pets-respository";
+import { PetFilter } from "../../../use-cases/pet-filter";
 import { FastifyReply, FastifyRequest } from "fastify";
-import z, { optional } from "zod";
+import z from "zod";
 
 export async function filterPets(request: FastifyRequest, reply: FastifyReply) {
     const filterParamsPetSchema = z.object({

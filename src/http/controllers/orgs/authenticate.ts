@@ -1,5 +1,5 @@
-import { PrismaOrgRepository } from "@/repositories/prisma/prisma-orgs-repository";
-import { Authenticate } from "@/use-cases/authenticate";
+import { PrismaOrgRepository } from "../../../repositories/prisma/prisma-orgs-repository";
+import { Authenticate } from "../../../use-cases/authenticate";
 import { FastifyReply, FastifyRequest } from "fastify";
 import { z } from "zod";
 
@@ -37,6 +37,7 @@ export async function authenticate(request: FastifyRequest, reply: FastifyReply)
                 token
             })
     } catch (err: any) {
+        console.log(err)
         return reply.status(400).send({ message: err.message })
     }
 }

@@ -1,5 +1,5 @@
-import { PrismaOrgRepository } from "@/repositories/prisma/prisma-orgs-repository";
-import { RegisterOrg } from "@/use-cases/register-org";
+import { PrismaOrgRepository } from "../../../repositories/prisma/prisma-orgs-repository";
+import { RegisterOrg } from "../../../use-cases/register-org";
 import { hash } from "bcryptjs";
 import { FastifyRequest, FastifyReply } from "fastify";
 import { z } from "zod";

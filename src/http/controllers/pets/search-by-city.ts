@@ -1,5 +1,5 @@
-import { PrismaOrgRepository } from "@/repositories/prisma/prisma-orgs-repository";
-import { SearchPetsUseCase } from "@/use-cases/search-pet-city";
+import { PrismaOrgRepository } from "../../../repositories/prisma/prisma-orgs-repository";
+import { SearchPetsUseCase } from "../../../use-cases/search-pet-city";
 import { FastifyRequest, FastifyReply } from "fastify";
 import { z } from "zod";
 
